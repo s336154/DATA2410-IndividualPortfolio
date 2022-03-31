@@ -223,7 +223,6 @@ else:
                                 action2).encode("utf-8"))
                         time.sleep(3.3)  # slowing down the process and blocking I\O
 
-
                 else:
                     continue
 
