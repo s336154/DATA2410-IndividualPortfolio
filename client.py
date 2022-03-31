@@ -8,7 +8,6 @@ import time #used here to slow-down\block processes
 import sys #to import command line parameters
 
 
-
 print('\n\n')
 
 #Condition for displaying logging in instructions
@@ -18,7 +17,6 @@ if str(sys.argv[1]) in ("--help", "-h"):
 
 #when client is connected
 else:
-
     #obtaining chosen username from command line
     nkname = str(sys.argv[3]).capitalize() #(Brace B., 2020)
 
@@ -56,7 +54,6 @@ else:
         bad_things.update(bad_things1)
         good_things.update(good_things1)
 
-
         #random function will pick random responses
         actionG = random.choice(tuple(good_things))
 
@@ -71,8 +68,6 @@ else:
         #Otherwise, if activty was not stored in both sets
         else:
          return "Whatever, I don't care !"
-
-
 
     #Function handling received messages
     def client_receive():
@@ -147,7 +142,6 @@ else:
     def client_send():
         #infinte loop
         while True:
-
             #Input containing client's message
             text = input(f" ").capitalize() #(Brace B., 2020)
 
@@ -222,11 +216,9 @@ else:
                 client.send(text.encode('utf-8'))  #forwarding message typed to server
                 time.sleep(2.5) #slowing down the process and blocking I\O
 
-
             else:
                 client.send(text.encode('utf-8'))  #forwarind message typed to server
                 time.sleep(2.5) #slowing down the process and blocking I\O
-
 
     # enables messages recieving process to run independently
     receive_thread = threading.Thread(target=client_receive) #(Brace B., 2020)
@@ -235,6 +227,3 @@ else:
     #enables messages sending process to run independently
     send_thread = threading.Thread(target=client_send) #(Brace B., 2020)
     send_thread.start()
-
-
-

@@ -227,11 +227,6 @@ else:
                 else:
                     continue
 
-
-
-
-
-
             #Handling an exception in which in client exits without sending a request
             except: #(Brace B., 2020)
 
@@ -350,8 +345,6 @@ else:
                 time.sleep(3.6) #slowing down the process and blocking I\O
                 clients[index].send(
                     f' >>   Instruction : Enter "--help" for help ..'.encode("utf-8"))
-
-
                 time.sleep(4.65) # slowing down the process and blocking I\O
                 client.send('\n\n\n\n\n\n\n\nLoading ... '.encode("utf-8"))
                 time.sleep(7)# slowing down the process and blocking I\O
@@ -365,9 +358,6 @@ else:
             #enabling threads\separated-processes for the handle_client() function
             thread = threading.Thread(target=handle_client, args=(client,)) #(Brace B., 2020)
             thread.start() #starting the thread
-
-
-
 
     #starting the recieve() function
     if __name__ == "__main__": #(Brace B., 2020)
