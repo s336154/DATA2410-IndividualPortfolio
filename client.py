@@ -15,7 +15,6 @@ print('\n\n')
 if str(sys.argv[1]) in ("--help", "-h"):
     print("\n\n  >>  Instruction : Please insert the IP address and Port number for the Chat Bot followed ")
     print( "  >>  by your username after the name of the python file.\n  >>  Example: > python client.py 192.168.56.1 8104 Ronald \n\n\n\n")
-    pass
 
 #when client is connected
 else:
@@ -83,9 +82,6 @@ else:
                 #Decoding message received
                 message = client.recv(1024).decode('utf-8')
 
-                #prefix in each message containing client username
-                broad = f" >> b'{nkname}'"
-
                 #declaring local variables
                 ex= None; exm = None
 
@@ -137,11 +133,8 @@ else:
                         client.send(stop.encode('utf-8'))
                     else:
                         pass
-
                 else:
                    pass
-
-
 
             #Exception handling disconnections from server
             except: #(Brace B., 2020)

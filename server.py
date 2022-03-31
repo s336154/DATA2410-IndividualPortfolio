@@ -14,7 +14,8 @@ import sys #to import command line parameters
 if str(sys.argv[1]) in ("--help", "-h"):
     print("\n\n >>  Instruction : Please insert the Port number after the name of the python file \n >>  Example: >  "
           "python server.py 8104 \n\n\n\n")
-    pass
+
+#when server is running
 else:
     #function to obtain IP address
     host = socket.gethostbyname(socket.gethostname())
@@ -355,7 +356,7 @@ else:
                 client.send('\n\n\n\n\n\n\n\nLoading ... '.encode("utf-8"))
                 time.sleep(7)# slowing down the process and blocking I\O
 
-            #blabk screen for clients
+            #blank screen for clients
             client.send('\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'.encode("utf-8"))
 
             #now the client can start chatting
